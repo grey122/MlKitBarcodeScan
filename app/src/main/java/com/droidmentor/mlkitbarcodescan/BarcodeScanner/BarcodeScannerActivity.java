@@ -252,6 +252,13 @@ public class BarcodeScannerActivity extends AppCompatActivity {
                             contactDetail.setOrgName(contactInfo.getOrganization());
                         }
 
+                        if(!TextUtils.isEmpty(contactInfo.getTitle())){
+                            Log.d(TAG, "onSuccess: getTitle" + contactInfo.getTitle());
+                            contactDetail.setpExpiringDate(contactInfo.getTitle());
+
+                        }
+
+
                         if (contactInfo.getUrls() != null && contactInfo.getUrls().length > 0) {
                             String[] urlList = contactInfo.getUrls();
                             Log.d(TAG, "onSuccess: getUrls" + urlList[0]);

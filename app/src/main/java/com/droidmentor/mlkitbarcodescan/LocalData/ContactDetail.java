@@ -21,6 +21,8 @@ public class ContactDetail
     private String orgName;
     @DatabaseField
     private String webLink;
+    @DatabaseField
+    private String pExpiringDate;
 
     public int getId() {
         return id;
@@ -76,5 +78,13 @@ public class ContactDetail
 
     public void setOrgName(String orgName) {
         this.orgName = orgName;
+    }
+
+    public String getpExpiringDate() {
+        return pExpiringDate;
+    }
+
+    public void setpExpiringDate(String pExpiringDate) {
+        this.pExpiringDate = pExpiringDate;
     }
 }

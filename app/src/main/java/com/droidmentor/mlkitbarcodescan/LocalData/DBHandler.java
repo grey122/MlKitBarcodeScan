@@ -71,6 +71,7 @@ public class DBHandler
     }
 
     // Update details in the Account table
+    //ADD HERE
 
     public void updateAccountDetails(int accountID,ContactDetail accountDetails) {
         RuntimeExceptionDao<ContactDetail, Integer> accountREDao = accountDB.getAccountREDao();
@@ -83,6 +84,7 @@ public class DBHandler
             updateBuilder.updateColumnValue("phoneNumber", accountDetails.getPhoneNumber());
             updateBuilder.updateColumnValue("webLink", accountDetails.getWebLink());
             updateBuilder.updateColumnValue("orgName", accountDetails.getOrgName());
+            updateBuilder.updateColumnValue("pExpiringDate",accountDetails.getpExpiringDate());
             updateBuilder.update();
             Log.d(TAG, "updateAccountDetails: ");
         } catch (SQLException e) {

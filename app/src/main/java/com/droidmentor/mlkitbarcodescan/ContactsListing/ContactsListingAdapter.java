@@ -65,9 +65,9 @@ public class ContactsListingAdapter extends CustomRecyclerViewAdapter {
         setText(type_item.tvAddress,contactDetail.getAddress());
         setText(type_item.tvMail,contactDetail.getEmailID());
         setText(type_item.tvName,contactDetail.getName());
+        setText(type_item.tvExpiringDate, contactDetail.getpExpiringDate());
 
         setDrawable(type_item.ivCall,contactDetail.getPhoneNumber(),1);
-        setDrawable(type_item.ivMail,contactDetail.getEmailID(),2);
         setDrawable(type_item.ivWeb,contactDetail.getWebLink(),3);
         setDrawable(type_item.ivDelete,"enable_delete",4);
 
@@ -87,10 +87,10 @@ public class ContactsListingAdapter extends CustomRecyclerViewAdapter {
                 customItemClickListener.onItemClick(view, type_item.getAdapterPosition(),ActionItem.CALL);
         });
 
-        type_item.ivMail.setOnClickListener(view -> {
+   /*     type_item.ivMail.setOnClickListener(view -> {
             if (customItemClickListener != null)
                 customItemClickListener.onItemClick(view, type_item.getAdapterPosition(),ActionItem.MAIL);
-        });
+        });*/
 
         type_item.ivWeb.setOnClickListener(view -> {
             if (customItemClickListener != null)
@@ -173,10 +173,10 @@ public class ContactsListingAdapter extends CustomRecyclerViewAdapter {
         TextView tvAddress;
         @BindView(R.id.tvMail)
         TextView tvMail;
+        @BindView(R.id.tvExpiredate)
+        TextView tvExpiringDate;
         @BindView(R.id.ivCall)
         ImageView ivCall;
-        @BindView(R.id.ivMail)
-        ImageView ivMail;
         @BindView(R.id.ivWeb)
         ImageView ivWeb;
         @BindView(R.id.ivDelete)

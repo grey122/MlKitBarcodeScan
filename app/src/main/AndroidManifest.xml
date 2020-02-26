@@ -6,6 +6,9 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
 
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <!-- Allows applications to open network sockets. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- Allows applications to access information about networks. -->

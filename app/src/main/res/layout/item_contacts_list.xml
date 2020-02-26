@@ -55,20 +55,30 @@
                     style="@style/cl_name_text_style"
                     android:text="Title" />
 
+
+                <TextView
+                    android:id="@+id/tvAddress"
+                    style="@style/cl_number_text_style"
+                    android:text="Byline Text" />
+
                 <TextView
                     android:id="@+id/tvMobileNumber"
                     style="@style/cl_number_text_style"
                     android:text="Open/Closed Now" />
 
-                <TextView
-                    android:id="@+id/tvAddress"
-                    style="@style/cl_address_text_style"
-                    android:text="Byline Text" />
 
                 <TextView
                     android:id="@+id/tvMail"
-                    style="@style/cl_mail_text_style"
-                    android:text="Display Location" />
+                    style="@style/cl_address_text_style"
+                    android:text="Expired Product" />
+
+                <TextView
+                    android:id="@+id/tvExpiredate"
+                    style="@style/cl_address_text_style"
+                    android:text="manu product" />
+
+
+
 
                 <View style="@style/cl_divider_line" />
 
@@ -78,17 +88,14 @@
                     android:layout_marginTop="@dimen/small_text"
                     android:background="@android:color/transparent"
                     android:orientation="horizontal"
-                    android:weightSum="4">
+                    android:weightSum="3">
 
                     <ImageView
                         android:id="@+id/ivCall"
                         android:src="@drawable/ic_call"
                         style="@style/cl_cta_option" />
 
-                    <ImageView
-                        android:id="@+id/ivMail"
-                        android:src="@drawable/ic_mail"
-                        style="@style/cl_cta_option" />
+
 
                     <ImageView
                         android:id="@+id/ivWeb"
@@ -99,6 +106,10 @@
                         android:id="@+id/ivDelete"
                         android:src="@drawable/ic_delete"
                         style="@style/cl_cta_option" />
+
+
+
+
 
                 </LinearLayout>
 

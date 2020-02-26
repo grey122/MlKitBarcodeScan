@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.droidmentor.mlkitbarcodescan.BarcodeScanner.BarcodeScannerActivity;
 import com.droidmentor.mlkitbarcodescan.ContactsListing.ContactsListingAdapter;
@@ -100,23 +102,20 @@ public class HomeActivity extends AppCompatActivity {
                 switch(actionItem)
                 {
                     case CALL:
-                        AlertDialogModel callAlertDialog=new AlertDialogModel();
-                        callAlertDialog.setTitle("Phone");
-                        callAlertDialog.setDesc(contactDetailArrayList.get(position).getPhoneNumber());
-                        callAlertDialog.setCancelable(true);
-                        callAlertDialog.setPositiveText("Call");
-                        callAlertDialog.setNegativeText("Cancel");
-                        alertDialogHelper.showAlertDialog(callAlertDialog,null);
+
+                         String phoneNumber =contactDetailArrayList.get(position).getPhoneNumber();
+                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                        if (phoneNumber.length() >= 11) {
+                            intent.setData(Uri.fromParts("tel", phoneNumber, null));
+                            startActivity(intent);
+                        }
+                        else{
+                            Toast.makeText(HomeActivity.this, "Phone number not valid", Toast.LENGTH_SHORT).show();
+                              }
+
+
                         break;
-                    case MAIL:
-                        AlertDialogModel mailAlertDialog=new AlertDialogModel();
-                        mailAlertDialog.setTitle("Mail to");
-                        mailAlertDialog.setDesc(contactDetailArrayList.get(position).getEmailID());
-                        mailAlertDialog.setCancelable(true);
-                        mailAlertDialog.setPositiveText("Send");
-                        mailAlertDialog.setNegativeText("Cancel");
-                        alertDialogHelper.showAlertDialog(mailAlertDialog,null);
-                        break;
+
                     case WEB:
                         // Redirect to web
                         Intent i = new Intent(Intent.ACTION_VIEW);
